@@ -37,9 +37,20 @@ var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: tru
 // src/index.tsx
 var src_exports = {};
 __export(src_exports, {
-  Button: () => Button
+  Box: () => Box,
+  Heading: () => Heading,
+  Text: () => Text
 });
 module.exports = __toCommonJS(src_exports);
+
+// src/components/Box.tsx
+var import_react = require("@stitches/react");
+var Box = (0, import_react.styled)("div", {
+  padding: "$4",
+  borderRadius: "$md",
+  backgroundColor: "$gray800",
+  border: "1px solid $gray600"
+});
 
 // ../tokens/dist/index.mjs
 var colors = {
@@ -116,9 +127,9 @@ var space = {
 };
 
 // src/styles/index.ts
-var import_react = require("@stitches/react");
+var import_react2 = require("@stitches/react");
 var {
-  styled,
+  styled: styled2,
   css,
   globalCss,
   keyframes,
@@ -126,8 +137,8 @@ var {
   theme,
   createTheme,
   config
-} = (0, import_react.createStitches)({
-  themeMap: __spreadProps(__spreadValues({}, import_react.defaultThemeMap), {
+} = (0, import_react2.createStitches)({
+  themeMap: __spreadProps(__spreadValues({}, import_react2.defaultThemeMap), {
     height: "space",
     width: "space"
   }),
@@ -142,31 +153,59 @@ var {
   }
 });
 
-// src/index.tsx
-var Button = styled("button", {
+// src/components/Text.tsx
+var Text = styled2("p", {
   fontFamily: "$default",
-  backgroundColor: "$ignite500",
-  borderRadius: "$md",
-  border: 0,
-  fontWeight: "bold",
-  color: "$white",
+  lineHeight: "$base",
+  margin: 0,
+  color: "$gray100",
   variants: {
     size: {
-      small: {
-        padding: "$2 $4",
-        fontSize: 14
-      },
-      big: {
-        padding: "$3 $6",
-        fontSize: 16
-      }
+      xxs: { fontSize: "$xxs" },
+      xs: { fontSize: "$xs" },
+      sm: { fontSize: "$sm" },
+      md: { fontSize: "$md" },
+      lg: { fontSize: "$lg" },
+      xl: { fontSize: "$xl" },
+      "2xl": { fontSize: "$2xl" },
+      "4xl": { fontSize: "$4xl" },
+      "5xl": { fontSize: "$5xl" },
+      "6xl": { fontSize: "$6xl" },
+      "7xl": { fontSize: "$7xl" },
+      "8xl": { fontSize: "$8xl" },
+      "9xl": { fontSize: "$9xl" }
     }
   },
   defaultVariants: {
-    size: "small"
+    size: "md"
+  }
+});
+
+// src/components/Heading.tsx
+var Heading = styled2("h2", {
+  fontFamily: "$default",
+  lineHeight: "$shorter",
+  margin: 0,
+  color: "$gray100",
+  variants: {
+    size: {
+      sm: { fontSize: "$xl" },
+      md: { fontSize: "$2xl" },
+      lg: { fontSize: "$4xl" },
+      "2xl": { fontSize: "$5xl" },
+      "3xl": { fontSize: "$6xl" },
+      "4xl": { fontSize: "$7xl" },
+      "5xl": { fontSize: "$8xl" },
+      "6xl": { fontSize: "$9xl" }
+    }
+  },
+  defaultVariants: {
+    size: "md"
   }
 });
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
-  Button
+  Box,
+  Heading,
+  Text
 });

@@ -18,6 +18,15 @@ var __spreadValues = (a, b) => {
 };
 var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
 
+// src/components/Box.tsx
+import { styled } from "@stitches/react";
+var Box = styled("div", {
+  padding: "$4",
+  borderRadius: "$md",
+  backgroundColor: "$gray800",
+  border: "1px solid $gray600"
+});
+
 // ../tokens/dist/index.mjs
 var colors = {
   white: "#FFF",
@@ -95,7 +104,7 @@ var space = {
 // src/styles/index.ts
 import { createStitches, defaultThemeMap } from "@stitches/react";
 var {
-  styled,
+  styled: styled2,
   css,
   globalCss,
   keyframes,
@@ -119,30 +128,58 @@ var {
   }
 });
 
-// src/index.tsx
-var Button = styled("button", {
+// src/components/Text.tsx
+var Text = styled2("p", {
   fontFamily: "$default",
-  backgroundColor: "$ignite500",
-  borderRadius: "$md",
-  border: 0,
-  fontWeight: "bold",
-  color: "$white",
+  lineHeight: "$base",
+  margin: 0,
+  color: "$gray100",
   variants: {
     size: {
-      small: {
-        padding: "$2 $4",
-        fontSize: 14
-      },
-      big: {
-        padding: "$3 $6",
-        fontSize: 16
-      }
+      xxs: { fontSize: "$xxs" },
+      xs: { fontSize: "$xs" },
+      sm: { fontSize: "$sm" },
+      md: { fontSize: "$md" },
+      lg: { fontSize: "$lg" },
+      xl: { fontSize: "$xl" },
+      "2xl": { fontSize: "$2xl" },
+      "4xl": { fontSize: "$4xl" },
+      "5xl": { fontSize: "$5xl" },
+      "6xl": { fontSize: "$6xl" },
+      "7xl": { fontSize: "$7xl" },
+      "8xl": { fontSize: "$8xl" },
+      "9xl": { fontSize: "$9xl" }
     }
   },
   defaultVariants: {
-    size: "small"
+    size: "md"
+  }
+});
+
+// src/components/Heading.tsx
+var Heading = styled2("h2", {
+  fontFamily: "$default",
+  lineHeight: "$shorter",
+  margin: 0,
+  color: "$gray100",
+  variants: {
+    size: {
+      sm: { fontSize: "$xl" },
+      md: { fontSize: "$2xl" },
+      lg: { fontSize: "$4xl" },
+      "2xl": { fontSize: "$5xl" },
+      "3xl": { fontSize: "$6xl" },
+      "4xl": { fontSize: "$7xl" },
+      "5xl": { fontSize: "$8xl" },
+      "6xl": { fontSize: "$9xl" }
+    }
+  },
+  defaultVariants: {
+    size: "md"
   }
 });
 export {
-  Button
+  Box,
+  Heading,
+  Text
 };
