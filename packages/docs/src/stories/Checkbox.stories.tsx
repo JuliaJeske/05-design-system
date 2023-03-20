@@ -1,28 +1,24 @@
-import { Box, Checkbox, CheckboxProps, Text } from '@ignite-ui/react'
-import { Meta, StoryObj} from '@storybook/react'
-
-
+import type { Meta, StoryObj } from '@storybook/react'
+import { Box, Text, Checkbox, CheckboxProps } from '@ignite-ui/react'
+import { ReactElement, JSXElementConstructor, ReactFragment, ReactPortal } from 'react'
 
 export default {
-  title: 'Form/Text Input',
+  title: 'Form/Checkbox',
   component: Checkbox,
-   args: {},
-   decorators: [
-    (Story) => {
+  args: {},
+  decorators: [
+    (Story: () => string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | ReactFragment | ReactPortal | null | undefined) => {
       return (
-        <Box as="label" css={{display: 'flex', flexDirection: 'row', gap: '$2'}}>
-         
+        <Box
+          as="label"
+          css={{ display: 'flex', flexDirection: 'row', gap: '$2' }}
+        >
           {Story()}
           <Text size="sm">Accept terms of use</Text>
         </Box>
       )
-    }
-   ],
-} as Meta<CheckboxProps>
+    },
+  ],
+} as unknown as Meta<CheckboxProps>
 
 export const Primary: StoryObj<CheckboxProps> = {}
-
-
-
-
-
