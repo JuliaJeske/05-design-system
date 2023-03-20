@@ -8,8 +8,33 @@ export default {
   title: 'Form/Button',
   component: Button,
    args: { 
-      children: 'Send'
+      children: 'Send',
+      variant: 'primary',
+      size: 'md',
+      disabled: false,
    },
+   argTypes: {
+    variant: {
+      options: ['primary', 'secondary', 'tertiary'],
+      control: {
+        type: 'inline-radio'
+      }
+    },
+    size: {
+      options: ['sm','md'],
+      control: {
+        type: 'inline-radio'
+      }
+    },
+    onClick: {
+      action: 'click',
+    },
+    disabled: {
+      control: {
+        type: 'boolean'
+      }
+    },
+  }
 } as Meta<ButtonProps>
 
 export const Primary: StoryObj<ButtonProps> = {}
@@ -18,7 +43,8 @@ export const Secondary: StoryObj<ButtonProps> = {
   args: {
     variant: 'secondary',
     children: 'Create new'
-  }
+  },
+  
 }
 
 export const Tertiary: StoryObj<ButtonProps> = {

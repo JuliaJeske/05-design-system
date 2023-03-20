@@ -34,3 +34,5 @@ export const Text = styled('p', {
 export type ComponentProps<T> = CP<T> & {
   as: ElementType
 }
+
+Text.displayName = 'Text'
