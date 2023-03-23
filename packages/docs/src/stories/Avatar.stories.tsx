@@ -6,7 +6,7 @@ export default {
   component: Avatar,
   args: {
     src: 'https://github.com/juliajeske.png',
-    alt: 'Diego Fernandes',
+    alt: 'Julia jeske',
   },
   argTypes: {
     src: {
