@@ -74,20 +74,10 @@ __export(src_exports, {
   getCssText: () => getCssText,
   globalCss: () => globalCss,
   keyframes: () => keyframes,
-  styled: () => styled2,
+  styled: () => styled,
   theme: () => theme
 });
 module.exports = __toCommonJS(src_exports);
-
-// src/components/Box.tsx
-var import_react = require("@stitches/react");
-var Box = (0, import_react.styled)("div", {
-  padding: "$4",
-  borderRadius: "$md",
-  backgroundColor: "$gray800",
-  border: "1px solid $gray600"
-});
-Box.displayName = "Box";
 
 // ../tokens/dist/index.mjs
 var colors = {
@@ -105,46 +95,7 @@ var colors = {
   ignite500: "#00875F",
   ignite700: "#015F43",
   ignite900: "#00291D",
-  teste: "#fff"
-};
-var fontSizes = {
-  xxs: "0.625rem",
-  xs: "0.75rem",
-  sm: "0.875rem",
-  md: "1rem",
-  //16px 
-  lg: "1.125rem",
-  xl: "1.25rem",
-  "2xl": "1.5rem",
-  "4xl": "2rem",
-  "5xl": "2.25rem",
-  "6xl": "3rem",
-  "7xl": "4rem",
-  "8xl": "4.5rem",
-  "9xl": "6rem"
-};
-var fontWeights = {
-  regular: "400",
-  medium: "500",
-  bold: "700"
-};
-var fonts = {
-  default: "Roboto, sans-serif",
-  code: "monospace"
-};
-var lineHeights = {
-  shorter: "125%",
-  short: "140%",
-  base: "160%",
-  tall: "180%"
-};
-var radii = {
-  px: "1px",
-  xs: "4px",
-  sm: "6px",
-  md: "8px",
-  lg: "16px",
-  full: "99999px"
+  test: "#FFF"
 };
 var space = {
   1: "0.25rem",
@@ -163,11 +114,49 @@ var space = {
   64: "16rem",
   80: "20rem"
 };
+var radii = {
+  px: "1px",
+  xs: "4px",
+  sm: "6px",
+  md: "8px",
+  lg: "16px",
+  full: "99999px"
+};
+var fonts = {
+  default: "Roboto, sans-serif",
+  code: "monospace"
+};
+var fontSizes = {
+  xxs: "0.625rem",
+  xs: "0.75rem",
+  sm: "0.875rem",
+  md: "1rem",
+  lg: "1.125rem",
+  xl: "1.25rem",
+  "2xl": "1.5rem",
+  "4xl": "2rem",
+  "5xl": "2.25rem",
+  "6xl": "3rem",
+  "7xl": "4rem",
+  "8xl": "4.5rem",
+  "9xl": "6rem"
+};
+var fontWeights = {
+  regular: "400",
+  medium: "500",
+  bold: "700"
+};
+var lineHeights = {
+  shorter: "125%",
+  short: "140%",
+  base: "160%",
+  tall: "180%"
+};
 
 // src/styles/index.ts
-var import_react2 = require("@stitches/react");
+var import_react = require("@stitches/react");
 var {
-  styled: styled2,
+  styled,
   css,
   globalCss,
   keyframes,
@@ -175,8 +164,8 @@ var {
   theme,
   createTheme,
   config
-} = (0, import_react2.createStitches)({
-  themeMap: __spreadProps(__spreadValues({}, import_react2.defaultThemeMap), {
+} = (0, import_react.createStitches)({
+  themeMap: __spreadProps(__spreadValues({}, import_react.defaultThemeMap), {
     height: "space",
     width: "space"
   }),
@@ -191,8 +180,17 @@ var {
   }
 });
 
+// src/components/Box.tsx
+var Box = styled("div", {
+  padding: "$6",
+  borderRadius: "$md",
+  backgroundColor: "$gray800",
+  border: "1px solid $gray600"
+});
+Box.displayName = "Box";
+
 // src/components/Text.tsx
-var Text = styled2("p", {
+var Text = styled("p", {
   fontFamily: "$default",
   lineHeight: "$base",
   margin: 0,
@@ -221,7 +219,7 @@ var Text = styled2("p", {
 Text.displayName = "Text";
 
 // src/components/Heading.tsx
-var Heading = styled2("h2", {
+var Heading = styled("h2", {
   fontFamily: "$default",
   lineHeight: "$shorter",
   margin: 0,
@@ -244,268 +242,25 @@ var Heading = styled2("h2", {
 });
 Heading.displayName = "Heading";
 
-// ../../node_modules/phosphor-react/dist/lib/index.esm.js
-var import_react3 = require("react");
-var IconContext = /* @__PURE__ */ (0, import_react3.createContext)({
-  color: "currentColor",
-  size: "1em",
-  weight: "regular",
-  mirrored: false
-});
-var renderPathForWeight = function renderPathForWeight2(weight, color, pathsByWeight3) {
-  var path = pathsByWeight3.get(weight);
-  if (!!path)
-    return path(color);
-  console.error('Unsupported icon weight. Choose from "thin", "light", "regular", "bold", "fill", or "duotone".');
-  return null;
-};
-
-// ../../node_modules/phosphor-react/dist/lib/IconBase.esm.js
-var import_react4 = __toESM(require("react"));
-
-// ../../node_modules/phosphor-react/dist/_virtual/_rollupPluginBabelHelpers.js
-function _objectWithoutPropertiesLoose(source, excluded) {
-  if (source == null)
-    return {};
-  var target = {};
-  var sourceKeys = Object.keys(source);
-  var key, i;
-  for (i = 0; i < sourceKeys.length; i++) {
-    key = sourceKeys[i];
-    if (excluded.indexOf(key) >= 0)
-      continue;
-    target[key] = source[key];
-  }
-  return target;
-}
-
-// ../../node_modules/phosphor-react/dist/lib/IconBase.esm.js
-var IconBase = /* @__PURE__ */ (0, import_react4.forwardRef)(function(props, ref) {
-  var alt = props.alt, color = props.color, size = props.size, weight = props.weight, mirrored = props.mirrored, children = props.children, renderPath5 = props.renderPath, restProps = _objectWithoutPropertiesLoose(props, ["alt", "color", "size", "weight", "mirrored", "children", "renderPath"]);
-  var _useContext = (0, import_react4.useContext)(IconContext), _useContext$color = _useContext.color, contextColor = _useContext$color === void 0 ? "currentColor" : _useContext$color, contextSize = _useContext.size, _useContext$weight = _useContext.weight, contextWeight = _useContext$weight === void 0 ? "regular" : _useContext$weight, _useContext$mirrored = _useContext.mirrored, contextMirrored = _useContext$mirrored === void 0 ? false : _useContext$mirrored, restContext = _objectWithoutPropertiesLoose(_useContext, ["color", "size", "weight", "mirrored"]);
-  return import_react4.default.createElement("svg", Object.assign({
-    ref,
-    xmlns: "http://www.w3.org/2000/svg",
-    width: size != null ? size : contextSize,
-    height: size != null ? size : contextSize,
-    fill: color != null ? color : contextColor,
-    viewBox: "0 0 256 256",
-    transform: mirrored || contextMirrored ? "scale(-1, 1)" : void 0
-  }, restContext, restProps), !!alt && import_react4.default.createElement("title", null, alt), children, import_react4.default.createElement("rect", {
-    width: "256",
-    height: "256",
-    fill: "none"
-  }), renderPath5(weight != null ? weight : contextWeight, color != null ? color : contextColor));
-});
-IconBase.displayName = "IconBase";
-var IconBase_esm_default = IconBase;
-
-// ../../node_modules/phosphor-react/dist/icons/Check.esm.js
-var import_react5 = __toESM(require("react"));
-var pathsByWeight = /* @__PURE__ */ new Map();
-pathsByWeight.set("bold", function(color) {
-  return import_react5.default.createElement(import_react5.default.Fragment, null, import_react5.default.createElement("polyline", {
-    points: "216 72 104 184 48 128",
-    fill: "none",
-    stroke: color,
-    strokeLinecap: "round",
-    strokeLinejoin: "round",
-    strokeWidth: "24"
-  }));
-});
-pathsByWeight.set("duotone", function(color) {
-  return import_react5.default.createElement(import_react5.default.Fragment, null, import_react5.default.createElement("polyline", {
-    points: "216 72 104 184 48 128",
-    fill: "none",
-    stroke: color,
-    strokeLinecap: "round",
-    strokeLinejoin: "round",
-    strokeWidth: "16"
-  }));
-});
-pathsByWeight.set("fill", function() {
-  return import_react5.default.createElement(import_react5.default.Fragment, null, import_react5.default.createElement("path", {
-    d: "M104,192a8.5,8.5,0,0,1-5.7-2.3l-56-56a8.1,8.1,0,0,1,11.4-11.4L104,172.7,210.3,66.3a8.1,8.1,0,0,1,11.4,11.4l-112,112A8.5,8.5,0,0,1,104,192Z"
-  }));
-});
-pathsByWeight.set("light", function(color) {
-  return import_react5.default.createElement(import_react5.default.Fragment, null, import_react5.default.createElement("polyline", {
-    points: "216 72 104 184 48 128",
-    fill: "none",
-    stroke: color,
-    strokeLinecap: "round",
-    strokeLinejoin: "round",
-    strokeWidth: "12"
-  }));
-});
-pathsByWeight.set("thin", function(color) {
-  return import_react5.default.createElement(import_react5.default.Fragment, null, import_react5.default.createElement("polyline", {
-    points: "216 72 104 184 48 128",
-    fill: "none",
-    stroke: color,
-    strokeLinecap: "round",
-    strokeLinejoin: "round",
-    strokeWidth: "8"
-  }));
-});
-pathsByWeight.set("regular", function(color) {
-  return import_react5.default.createElement(import_react5.default.Fragment, null, import_react5.default.createElement("polyline", {
-    points: "216 72 104 184 48 128",
-    fill: "none",
-    stroke: color,
-    strokeLinecap: "round",
-    strokeLinejoin: "round",
-    strokeWidth: "16"
-  }));
-});
-var renderPath = function renderPath2(weight, color) {
-  return renderPathForWeight(weight, color, pathsByWeight);
-};
-var Check = /* @__PURE__ */ (0, import_react5.forwardRef)(function(props, ref) {
-  return import_react5.default.createElement(IconBase_esm_default, Object.assign({
-    ref
-  }, props, {
-    renderPath
-  }));
-});
-Check.displayName = "Check";
-var Check_esm_default = Check;
-
-// ../../node_modules/phosphor-react/dist/icons/User.esm.js
-var import_react6 = __toESM(require("react"));
-var pathsByWeight2 = /* @__PURE__ */ new Map();
-pathsByWeight2.set("bold", function(color) {
-  return import_react6.default.createElement(import_react6.default.Fragment, null, import_react6.default.createElement("circle", {
-    cx: "128",
-    cy: "96",
-    r: "64",
-    fill: "none",
-    stroke: color,
-    strokeLinecap: "round",
-    strokeLinejoin: "round",
-    strokeWidth: "24"
-  }), import_react6.default.createElement("path", {
-    d: "M31,216a112,112,0,0,1,194,0",
-    fill: "none",
-    stroke: color,
-    strokeLinecap: "round",
-    strokeLinejoin: "round",
-    strokeWidth: "24"
-  }));
-});
-pathsByWeight2.set("duotone", function(color) {
-  return import_react6.default.createElement(import_react6.default.Fragment, null, import_react6.default.createElement("circle", {
-    cx: "128",
-    cy: "96",
-    r: "64",
-    opacity: "0.2"
-  }), import_react6.default.createElement("circle", {
-    cx: "128",
-    cy: "96",
-    r: "64",
-    fill: "none",
-    stroke: color,
-    strokeMiterlimit: "10",
-    strokeWidth: "16"
-  }), import_react6.default.createElement("path", {
-    d: "M31,216a112,112,0,0,1,194,0",
-    fill: "none",
-    stroke: color,
-    strokeLinecap: "round",
-    strokeLinejoin: "round",
-    strokeWidth: "16"
-  }));
-});
-pathsByWeight2.set("fill", function() {
-  return import_react6.default.createElement(import_react6.default.Fragment, null, import_react6.default.createElement("path", {
-    d: "M231.9,212a120.7,120.7,0,0,0-67.1-54.2,72,72,0,1,0-73.6,0A120.7,120.7,0,0,0,24.1,212a7.7,7.7,0,0,0,0,8,7.8,7.8,0,0,0,6.9,4H225a7.8,7.8,0,0,0,6.9-4A7.7,7.7,0,0,0,231.9,212Z"
-  }));
-});
-pathsByWeight2.set("light", function(color) {
-  return import_react6.default.createElement(import_react6.default.Fragment, null, import_react6.default.createElement("circle", {
-    cx: "128",
-    cy: "96",
-    r: "64",
-    fill: "none",
-    stroke: color,
-    strokeLinecap: "round",
-    strokeLinejoin: "round",
-    strokeWidth: "12"
-  }), import_react6.default.createElement("path", {
-    d: "M31,216a112,112,0,0,1,194,0",
-    fill: "none",
-    stroke: color,
-    strokeLinecap: "round",
-    strokeLinejoin: "round",
-    strokeWidth: "12"
-  }));
-});
-pathsByWeight2.set("thin", function(color) {
-  return import_react6.default.createElement(import_react6.default.Fragment, null, import_react6.default.createElement("circle", {
-    cx: "128",
-    cy: "96",
-    r: "64",
-    fill: "none",
-    stroke: color,
-    strokeLinecap: "round",
-    strokeLinejoin: "round",
-    strokeWidth: "8"
-  }), import_react6.default.createElement("path", {
-    d: "M31,216a112,112,0,0,1,194,0",
-    fill: "none",
-    stroke: color,
-    strokeLinecap: "round",
-    strokeLinejoin: "round",
-    strokeWidth: "8"
-  }));
-});
-pathsByWeight2.set("regular", function(color) {
-  return import_react6.default.createElement(import_react6.default.Fragment, null, import_react6.default.createElement("circle", {
-    cx: "128",
-    cy: "96",
-    r: "64",
-    fill: "none",
-    stroke: color,
-    strokeMiterlimit: "10",
-    strokeWidth: "16"
-  }), import_react6.default.createElement("path", {
-    d: "M31,216a112,112,0,0,1,194,0",
-    fill: "none",
-    stroke: color,
-    strokeLinecap: "round",
-    strokeLinejoin: "round",
-    strokeWidth: "16"
-  }));
-});
-var renderPath3 = function renderPath4(weight, color) {
-  return renderPathForWeight(weight, color, pathsByWeight2);
-};
-var User = /* @__PURE__ */ (0, import_react6.forwardRef)(function(props, ref) {
-  return import_react6.default.createElement(IconBase_esm_default, Object.assign({
-    ref
-  }, props, {
-    renderPath: renderPath3
-  }));
-});
-User.displayName = "User";
-var User_esm_default = User;
+// src/components/Avatar/index.tsx
+var import_phosphor_react = require("phosphor-react");
 
 // src/components/Avatar/styles.ts
 var Avatar = __toESM(require("@radix-ui/react-avatar"));
-var AvatarContainer = styled2(Avatar.Root, {
+var AvatarContainer = styled(Avatar.Root, {
   borderRadius: "$full",
   display: "inline-block",
-  width: "$12",
-  height: "$12",
+  width: "$16",
+  height: "$16",
   overflow: "hidden"
 });
-var AvatarImage = styled2(Avatar.Image, {
+var AvatarImage = styled(Avatar.Image, {
   width: "100%",
   height: "100%",
   objectFit: "cover",
   borderRadius: "inherit"
 });
-var AvatarFallback = styled2(Avatar.Fallback, {
+var AvatarFallback = styled(Avatar.Fallback, {
   width: "100%",
   height: "100%",
   display: "flex",
@@ -524,12 +279,13 @@ var import_jsx_runtime = require("react/jsx-runtime");
 function Avatar2(props) {
   return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(AvatarContainer, { children: [
     /* @__PURE__ */ (0, import_jsx_runtime.jsx)(AvatarImage, __spreadValues({}, props)),
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(AvatarFallback, { delayMs: 600, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(User_esm_default, {}) })
+    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(AvatarFallback, { delayMs: 600, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_phosphor_react.User, {}) })
   ] });
 }
+Avatar2.displayName = "Avatar";
 
 // src/components/Button.tsx
-var Button = styled2("button", {
+var Button = styled("button", {
   all: "unset",
   borderRadius: "$sm",
   fontSize: "$sm",
@@ -538,19 +294,21 @@ var Button = styled2("button", {
   textAlign: "center",
   minWidth: 120,
   boxSizing: "border-box",
+  padding: "0 $4",
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
   gap: "$2",
-  padding: "0 $4",
   cursor: "pointer",
   svg: {
     width: "$4",
     height: "$4"
   },
   "&:disabled": {
-    background: "$gray200",
     cursor: "not-allowed"
+  },
+  "&:focus": {
+    boxShadow: "0 0 0 2px $colors$gray100"
   },
   variants: {
     variant: {
@@ -561,7 +319,7 @@ var Button = styled2("button", {
           background: "$ignite300"
         },
         "&:disabled": {
-          background: "$gray200"
+          backgroundColor: "$gray200"
         }
       },
       secondary: {
@@ -602,30 +360,45 @@ var Button = styled2("button", {
 });
 Button.displayName = "Button";
 
+// src/components/TextInput/index.tsx
+var import_react2 = require("react");
+
 // src/components/TextInput/styles.ts
-var TextInputContainer = styled2("div", {
+var TextInputContainer = styled("div", {
   backgroundColor: "$gray900",
-  padding: "$3 $4",
   borderRadius: "$sm",
   boxSizing: "border-box",
   border: "2px solid $gray900",
   display: "flex",
-  alignItems: "baseline",
+  alignItems: "center",
+  variants: {
+    size: {
+      sm: {
+        padding: "$2 $3"
+      },
+      md: {
+        padding: "$3 $4"
+      }
+    }
+  },
   "&:has(input:focus)": {
     borderColor: "$ignite300"
   },
   "&:has(input:disabled)": {
     opacity: 0.5,
     cursor: "not-allowed"
+  },
+  defaultVariants: {
+    size: "md"
   }
 });
-var Prefix = styled2("span", {
+var Prefix = styled("span", {
   fontFamily: "$default",
   fontSize: "$sm",
   color: "$gray400",
   fontWeight: "regular"
 });
-var Input = styled2("input", {
+var Input = styled("input", {
   fontFamily: "$default",
   fontSize: "$sm",
   color: "$white",
@@ -639,24 +412,26 @@ var Input = styled2("input", {
   "&:disabled": {
     cursor: "not-allowed"
   },
-  "&:placeholder": {
-    color: "$gray400"
+  "&::placeholder": {
+    color: "$gray500"
   }
 });
 
 // src/components/TextInput/index.tsx
 var import_jsx_runtime2 = require("react/jsx-runtime");
-function TextInput(_a) {
-  var _b = _a, { prefix } = _b, props = __objRest(_b, ["prefix"]);
-  return /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(TextInputContainer, { children: [
-    !!prefix && /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(Prefix, { children: prefix }),
-    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(Input, __spreadValues({}, props))
-  ] });
-}
+var TextInput = (0, import_react2.forwardRef)(
+  (_a, ref) => {
+    var _b = _a, { prefix, size } = _b, props = __objRest(_b, ["prefix", "size"]);
+    return /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(TextInputContainer, { size, children: [
+      !!prefix && /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(Prefix, { children: prefix }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(Input, __spreadValues({ ref }, props))
+    ] });
+  }
+);
 TextInput.displayName = "TextInput";
 
 // src/components/TextArea.tsx
-var TextArea = styled2("textarea", {
+var TextArea = styled("textarea", {
   backgroundColor: "$gray900",
   padding: "$3 $4",
   borderRadius: "$sm",
@@ -668,23 +443,26 @@ var TextArea = styled2("textarea", {
   fontWeight: "$regular",
   resize: "vertical",
   minHeight: 80,
-  "&:focus)": {
-    borderColor: "$ignite300",
-    outline: 0
-  },
-  "&:placeholder": {
-    color: "$gray400"
+  "&:focus": {
+    outline: 0,
+    borderColor: "$ignite300"
   },
   "&:disabled": {
     opacity: 0.5,
     cursor: "not-allowed"
+  },
+  "&:placeholder": {
+    color: "$gray400"
   }
 });
 TextArea.displayName = "TextArea";
 
+// src/components/Checkbox/index.tsx
+var import_phosphor_react2 = require("phosphor-react");
+
 // src/components/Checkbox/styles.ts
 var Checkbox = __toESM(require("@radix-ui/react-checkbox"));
-var CheckboxContainer = styled2(Checkbox.Root, {
+var CheckboxContainer = styled(Checkbox.Root, {
   all: "unset",
   width: "$6",
   height: "$6",
@@ -721,7 +499,7 @@ var slideOut = keyframes({
     transform: "translateY(-100%)"
   }
 });
-var CheckboxIndicator = styled2(Checkbox.Indicator, {
+var CheckboxIndicator = styled(Checkbox.Indicator, {
   color: "$white",
   width: "$4",
   height: "$4",
@@ -736,26 +514,25 @@ var CheckboxIndicator = styled2(Checkbox.Indicator, {
 // src/components/Checkbox/index.tsx
 var import_jsx_runtime3 = require("react/jsx-runtime");
 function Checkbox2(props) {
-  /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(CheckboxContainer, __spreadProps(__spreadValues({}, props), { children: /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(CheckboxIndicator, { asChild: true, children: /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(Check_esm_default, { weight: "bold" }) }) }));
+  return /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(CheckboxContainer, __spreadProps(__spreadValues({}, props), { children: /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(CheckboxIndicator, { asChild: true, children: /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(import_phosphor_react2.Check, { weight: "bold" }) }) }));
 }
 Checkbox2.displayName = "Checkbox";
 
 // src/components/MultiStep/styles.ts
-var MultiStepContainer = styled2("div", {});
-var Label = styled2(Text, {
-  //fontSize: '$xl',
+var MultiStepContainer = styled("div", {});
+var Label = styled(Text, {
   color: "$gray200",
   defaultVariants: {
     size: "xs"
   }
 });
-var Steps = styled2("div", {
+var Steps = styled("div", {
   display: "grid",
+  gridTemplateColumns: "repeat(var(--steps-size), 1fr)",
   gap: "$2",
-  marginTop: "$1",
-  gridTemplateColumns: "repeat(var(--steps-size), 1fr)"
+  marginTop: "$1"
 });
-var Step = styled2("div", {
+var Step = styled("div", {
   height: "$1",
   borderRadius: "$px",
   backgroundColor: "$gray600",
