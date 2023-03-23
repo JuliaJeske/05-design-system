@@ -1,4 +1,4 @@
 {
-"extends": "@julia-ignite-ui/ts-config/base.json",
-"include": ["src"]
+  "extends": "@julia-ignite-ui/ts-config/base.json",
+  "include": ["src"]
 }

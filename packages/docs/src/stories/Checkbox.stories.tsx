@@ -1,13 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Box, Text, Checkbox, CheckboxProps } from '@ignite-ui/react'
-import { ReactElement, JSXElementConstructor, ReactFragment, ReactPortal } from 'react'
+import { Box, Text, Checkbox, CheckboxProps } from '@julia-ignite-ui/react'
 
 export default {
   title: 'Form/Checkbox',
   component: Checkbox,
   args: {},
   decorators: [
-    (Story: () => string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | ReactFragment | ReactPortal | null | undefined) => {
+    (Story) => {
       return (
         <Box
           as="label"
@@ -19,6 +18,6 @@ export default {
       )
     },
   ],
-} as unknown as Meta<CheckboxProps>
+} as Meta<CheckboxProps>
 
 export const Primary: StoryObj<CheckboxProps> = {}

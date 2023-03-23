@@ -1,22 +1,20 @@
-import {  AvatarProps, Avatar } from '@ignite-ui/react'
-import { Meta, StoryObj} from '@storybook/react'
-
-
+import type { Meta, StoryObj } from '@storybook/react'
+import { Avatar, AvatarProps } from '@julia-ignite-ui/react'
 
 export default {
   title: 'Data display/Avatar',
   component: Avatar,
-   args: { 
-     src: 'https://github.com/JuliaJeske.png',
-     alt: 'Julia Jeske',
-   },
-   argTypes: {
-    src:{
+  args: {
+    src: 'https://github.com/juliajeske.png',
+    alt: 'Diego Fernandes',
+  },
+  argTypes: {
+    src: {
       control: {
         type: 'text',
-      }
-    }
-   },
+      },
+    },
+  },
 } as Meta<AvatarProps>
 
 export const Primary: StoryObj<AvatarProps> = {}
@@ -24,6 +22,5 @@ export const Primary: StoryObj<AvatarProps> = {}
 export const WithFallback: StoryObj<AvatarProps> = {
   args: {
     src: undefined,
-  }
+  },
 }
-

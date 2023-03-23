@@ -6,4 +6,3 @@ export const radii = {
   lg: '16px',
   full: '99999px',
 }
-//border radius
